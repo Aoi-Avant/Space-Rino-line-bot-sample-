@@ -28,11 +28,12 @@ post '/callback' do
       when Line::Bot::Event::MessageType::Text
         message = [
             {type: 'text',text: "愚かなる人類よ\n貴様の汚れた言葉をここに繰り返そう"},
-            {type: 'text',text: event.message['text']}
+            {type: 'text',text: event.message['text']},
+            {type: 'text',text: "魂に刻み込め"}
         ]
         client.reply_message(event['replyToken'], message)
       else
-        message = {type: 'text',text: "愚かなる人類よ\n人間の言葉で喋れ"} 
+        message = {type: 'text',text: "愚かなる人類よ\n貴様の言葉で喋れ"} 
         client.reply_message(event['replyToken'], message)
       end
     end
