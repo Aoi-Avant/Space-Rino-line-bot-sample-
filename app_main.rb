@@ -35,7 +35,7 @@ post '/callback' do
       else
         message = [
             {type: 'text',text: "愚かなる人類よ\n言語すら自由に操れんのか"} ,
-            {type: 'text',text: "あまりにも哀れだ"}
+            {type: 'text',text: "哀れなやつよ"}
         ]
         client.reply_message(event['replyToken'], message)
       end
