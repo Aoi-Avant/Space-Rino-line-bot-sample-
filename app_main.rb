@@ -27,14 +27,12 @@ post '/callback' do
       case event.type
       when Line::Bot::Event::MessageType::Text
         message = [
-            {type: 'text',text: "愚かなる人類よ\n貴様の汚れた言葉をいまここに繰り返そう"},
+            {type: 'text',text: "愚かなる人類よ\n貴様の汚れた言葉をここに繰り返そう"},
             {type: 'text',text: event.message['text']}
         ]
         client.reply_message(event['replyToken'], message)
-      when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
-        response = client.get_message_content(event.message['id'])
-        tf = Tempfile.open("content")
-        tf.write(response.body)
+      else
+        message = {type: 'text',text: "愚かなる人類よ\n人間の言葉で喋れ"} 
       end
     end
   }
