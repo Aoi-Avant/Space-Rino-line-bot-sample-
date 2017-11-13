@@ -33,6 +33,7 @@ post '/callback' do
         client.reply_message(event['replyToken'], message)
       else
         message = {type: 'text',text: "愚かなる人類よ\n人間の言葉で喋れ"} 
+        client.reply_message(event['replyToken'], message)
       end
     end
   }
