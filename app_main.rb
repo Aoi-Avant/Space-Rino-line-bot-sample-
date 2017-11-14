@@ -75,6 +75,13 @@ post '/callback' do
         ]
         client.reply_message(event['replyToken'], message)
         
+      　else
+      　  message = [
+            {type: 'text',text: "愚かなる人類よ\n遂に言語を捨てたか"} ,
+            {type: 'text',text: "哀れなものよ"}
+        ]
+        client.reply_message(event['replyToken'], message)
+        
       end
     end
   }
