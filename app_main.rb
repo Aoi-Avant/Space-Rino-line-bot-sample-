@@ -32,12 +32,49 @@ post '/callback' do
             {type: 'text',text: "この喜びを魂に刻み込め"}
         ]
         client.reply_message(event['replyToken'], message)
-      else
+      
+      when Line::Bot::Event::MessageType::Image
         message = [
-            {type: 'text',text: "愚かなる人類よ\n言語すら自由に操れんのか"} ,
-            {type: 'text',text: "哀れなやつよ"}
+            {type: 'text',text: "この宇宙にあるものは皆等しく美しい"} ,
+            {type: 'text',text: "その美しさを魂に刻み込め"}
         ]
         client.reply_message(event['replyToken'], message)
+      
+      when Line::Bot::Event::MessageType::Video
+        message = [
+            {type: 'text',text: "私は平面的な動きには興味がない"} ,
+            {type: 'text',text: "愚かなる人類よ\n現実の風景を魂に刻み込め"}
+        ]
+        client.reply_message(event['replyToken'], message)
+      
+      when Line::Bot::Event::MessageType::Audio
+        message = [
+            {type: 'text',text: "宇宙は常に旋律を奏でている"} ,
+            {type: 'text',text: "その音を魂に刻み込め"}
+        ]
+        client.reply_message(event['replyToken'], message)
+        
+      when Line::Bot::Event::MessageType::File
+        message = [
+            {type: 'text',text: "愚かなる人類よ\nデータの世界に囚われるな"} ,
+            {type: 'text',text: "その魂を宇宙に解き放て"}
+        ]
+        client.reply_message(event['replyToken'], message)
+      
+      when Line::Bot::Event::MessageType::Location
+        message = [
+            {type: 'text',text: "そこが貴様が囚われている大地の座標か"} ,
+            {type: 'text',text: "大地に囚われるとは、哀れなことよ"}
+        ]
+        client.reply_message(event['replyToken'], message)
+        
+      when Line::Bot::Event::MessageType::Sticker
+        message = [
+            {type: 'text',text: "愚かなる人類よ\n遂に言語を捨てたか"} ,
+            {type: 'text',text: "言語を捨てるとは、哀れなことよ"}
+        ]
+        client.reply_message(event['replyToken'], message)
+        
       end
     end
   }
