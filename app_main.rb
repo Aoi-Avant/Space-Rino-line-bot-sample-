@@ -53,32 +53,11 @@ post '/callback' do
             {type: 'text',text: "その音を魂に刻み込め"}
         ]
         client.reply_message(event['replyToken'], message)
-        
-      when Line::Bot::Event::MessageType::File
+ 
+      else
         message = [
-            {type: 'text',text: "愚かなる人類よ\nデータの世界に囚われるな"} ,
-            {type: 'text',text: "その魂を宇宙に解き放て"}
-        ]
-        client.reply_message(event['replyToken'], message)
-      
-      when Line::Bot::Event::MessageType::Location
-        message = [
-            {type: 'text',text: "そこが貴様が囚われている大地の座標か"} ,
-            {type: 'text',text: "大地に囚われるとは、哀れなことよ"}
-        ]
-        client.reply_message(event['replyToken'], message)
-        
-      when Line::Bot::Event::MessageType::Sticker
-        message = [
-            {type: 'text',text: "愚かなる人類よ\n遂に言語を捨てたか"} ,
-            {type: 'text',text: "言語を捨てるとは、哀れなことよ"}
-        ]
-        client.reply_message(event['replyToken'], message)
-        
-      　else
-      　  message = [
-            {type: 'text',text: "愚かなる人類よ\n遂に言語を捨てたか"} ,
-            {type: 'text',text: "哀れなものよ"}
+          {type: 'text',text: "愚かなる人類よ\n遂に言語を捨てたか"} ,
+          {type: 'text',text: "哀れなものよ"}
         ]
         client.reply_message(event['replyToken'], message)
         
